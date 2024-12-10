@@ -6,6 +6,7 @@ const endMessage = document.getElementById('end-message');
 const restartButton = document.getElementById('restart');
 const scoreDisplay = document.getElementById('score');
 
+
 const allShapes = [
     // 2x2 Square (basic)
     { shape: [[1, 1], [1, 1]], name: 'Square 2x2', id: 'Square-0', color: 'cyan' },
@@ -16,8 +17,8 @@ const allShapes = [
     // 4-block Line (horizontal)
     { shape: [[1, 1, 1, 1]], name: 'Line 4', id: 'Line-0', color: 'chartreuse' },
 
-    // 5-block Line (horizontal)
-    { shape: [[1, 1, 1, 1, 1]], name: 'Line 5', id: 'Line-1', color: 'electricblue' },
+// 5-block Line (horizontal)
+{ shape: [[1, 1, 1, 1, 1]], name: 'Line 5', id: 'Line-1', color: 'rgb(170, 50, 255)' },
 
     // 4-block Line (vertical)
     { shape: [[1], [1], [1], [1]], name: 'Line 4 (Vertical)', id: 'Line-2', color: 'magenta' },
@@ -86,6 +87,9 @@ const allShapes = [
     // Diamond shape
     { shape: [[0, 1, 0], [1, 1, 1], [0, 1, 0]], name: 'Diamond-shape', id: 'Diamond-0', color: 'fuchsia' }
 ];
+
+
+
 
 
 
@@ -398,7 +402,6 @@ function resetGame() {
 
 // Initial setup
 resetGame(); // Initialize the game
-
 
 
 
