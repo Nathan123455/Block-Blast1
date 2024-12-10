@@ -7,40 +7,84 @@ const restartButton = document.getElementById('restart');
 const scoreDisplay = document.getElementById('score');
 
 const allShapes = [
+    // 2x2 Square (basic)
     { shape: [[1, 1], [1, 1]], name: 'Square 2x2', id: 'Square-0', color: 'cyan' },
+
+    // 3x3 Square (full square)
     { shape: [[1, 1, 1], [1, 1, 1], [1, 1, 1]], name: 'Square 3x3', id: 'Square-1', color: 'yellow' },
+
+    // 4-block Line (horizontal)
     { shape: [[1, 1, 1, 1]], name: 'Line 4', id: 'Line-0', color: 'chartreuse' },
+
+    // 5-block Line (horizontal)
     { shape: [[1, 1, 1, 1, 1]], name: 'Line 5', id: 'Line-1', color: 'electricblue' },
+
+    // 4-block Line (vertical)
     { shape: [[1], [1], [1], [1]], name: 'Line 4 (Vertical)', id: 'Line-2', color: 'magenta' },
+
+    // 5-block Line (vertical)
     { shape: [[1], [1], [1], [1], [1]], name: 'Line 5 (Vertical)', id: 'Line-3', color: 'fuchsia' },
+
+    // L-shape (rotated variations)
     { shape: [[1, 1, 0], [1, 1, 1]], name: 'L-shape', id: 'L-0', color: 'tomato' },
     { shape: [[1, 0], [1, 0], [1, 1]], name: 'L-shape rotated 90', id: 'L-1', color: 'limegreen' },
     { shape: [[1, 1], [0, 1], [0, 1]], name: 'L-shape rotated 180', id: 'L-2', color: 'orange' },
     { shape: [[0, 1], [0, 1], [1, 1]], name: 'L-shape rotated 270', id: 'L-3', color: 'dodgerblue' },
+
+    // J-shape (rotated variations)
     { shape: [[1, 1, 1], [1, 0, 0]], name: 'J-shape', id: 'J-0', color: 'blue' },
     { shape: [[0, 1], [0, 1], [1, 1]], name: 'J-shape rotated 90', id: 'J-1', color: 'green' },
     { shape: [[0, 0, 1], [1, 1, 1]], name: 'J-shape rotated 180', id: 'J-2', color: 'purple' },
     { shape: [[1, 1], [1, 0], [1, 0]], name: 'J-shape rotated 270', id: 'J-3', color: 'red' },
+
+    // T-shape (rotated variations)
     { shape: [[1, 1, 1], [0, 1, 0]], name: 'T-shape', id: 'T-0', color: 'violet' },
     { shape: [[0, 1], [1, 1], [0, 1]], name: 'T-shape rotated 90', id: 'T-1', color: 'turquoise' },
     { shape: [[0, 1, 0], [1, 1, 1]], name: 'T-shape rotated 180', id: 'T-2', color: 'plum' },
     { shape: [[1, 0], [1, 1], [1, 0]], name: 'T-shape rotated 270', id: 'T-3', color: 'pink' },
+
+    // Z-shape (rotated variations)
     { shape: [[1, 1, 0], [0, 1, 1]], name: 'Z-shape', id: 'Z-0', color: 'springgreen' },
     { shape: [[0, 1], [1, 1], [1, 0]], name: 'Z-shape rotated 90', id: 'Z-1', color: 'crimson' },
+    { shape: [[1, 1], [0, 1], [0, 1]], name: 'Z-shape rotated 180', id: 'Z-2', color: 'orchid' },
     { shape: [[0, 1], [1, 1], [1, 0]], name: 'Z-shape rotated 270', id: 'Z-3', color: 'yellowgreen' },
+
+    // S-shape (rotated variations)
     { shape: [[0, 1, 1], [1, 1, 0]], name: 'S-shape', id: 'S-0', color: 'seagreen' },
     { shape: [[1, 1], [0, 1], [0, 1]], name: 'S-shape rotated 90', id: 'S-1', color: 'skyblue' },
+    { shape: [[1, 1], [1, 0], [1, 0]], name: 'S-shape rotated 180', id: 'S-2', color: 'mediumvioletred' },
     { shape: [[0, 1], [1, 1], [1, 0]], name: 'S-shape rotated 270', id: 'S-3', color: 'deepskyblue' },
+
+    // I-shape (4 blocks)
     { shape: [[1, 1, 1, 1]], name: 'I-shape', id: 'I-0', color: 'red' },
     { shape: [[1], [1], [1], [1]], name: 'I-shape rotated', id: 'I-1', color: 'lime' },
+
+    // Custom small 2x3 variations
     { shape: [[1, 1, 0], [1, 1, 1]], name: 'Tetris 2x3 (Variation 1)', id: '2x3-0', color: 'gold' },
     { shape: [[1, 0, 1], [1, 1, 1]], name: 'Tetris 2x3 (Variation 2)', id: '2x3-1', color: 'mediumorchid' },
     { shape: [[0, 1, 1], [1, 1, 1]], name: 'Tetris 2x3 (Variation 3)', id: '2x3-2', color: 'orangered' },
+
+    // New custom shapes
+
+    // W-shape (custom)
     { shape: [[1, 0, 1], [0, 1, 1]], name: 'W-shape', id: 'W-0', color: 'aqua' },
     { shape: [[0, 1], [1, 1], [1, 0]], name: 'W-shape rotated', id: 'W-1', color: 'orchid' },
+
+    // H-shape (custom)
     { shape: [[1, 1, 0], [1, 1, 0], [1, 1, 0]], name: 'H-shape', id: 'H-0', color: 'hotpink' },
-    { shape: [[1, 0], [1, 1], [1, 0]], name: 'H-shape rotated', id: 'H-1', color: 'yellowgreen' },
-    { shape: [[0, 1, 0], [1, 1, 1], [0, 1, 0]], name: 'Diamond-shape', id: 'Diamond-0', color: 'fuchsia' },
+    { shape: [[1, 0], [1, 1], [1, 0]], name: 'H-shape rotated', id: 'H-1', color: 'yellow' },
+
+    // Pyramid shape
+    { shape: [[1, 0, 0], [1, 1, 0], [1, 1, 1]], name: 'Pyramid-shape', id: 'Pyramid-0', color: 'darkorange' },
+
+    // Cross shape (X-shape)
+    { shape: [[1, 1, 1], [1, 1, 1]], name: 'Cross-shape', id: 'Cross-0', color: 'darkviolet' },
+    { shape: [[1, 0], [1, 1], [0, 1]], name: 'Cross-shape rotated', id: 'Cross-1', color: 'indianred' },
+
+ 
+
+    // Diamond shape
+    { shape: [[0, 1, 0], [1, 1, 1], [0, 1, 0]], name: 'Diamond-shape', id: 'Diamond-0', color: 'fuchsia' }
 ];
 
 
