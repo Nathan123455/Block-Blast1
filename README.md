@@ -1,1 +1,0 @@
-I recreated the mobile game 'Block Blast' as best as I could using HTML, CSS, and JavaScript for the web. Please note that combos currently don't work, and sometimes the block previews may be cut off.
