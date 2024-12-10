@@ -68,11 +68,11 @@ const allShapes = [
 
     // W-shape (custom)
     { shape: [[1, 0, 1], [0, 1, 1]], name: 'W-shape', id: 'W-0', color: 'aqua' },
-    { shape: [[0, 1], [1, 1], [1, 0]], name: 'W-shape rotated', id: 'W-1', color: 'orchid' },
+    { shape: [[0, 1], [1, 1], [1, 0]], name: 'W-shape rotated', id: 'W-1', color: 'lightcoral' },
 
     // H-shape (custom)
     { shape: [[1, 1, 0], [1, 1, 0], [1, 1, 0]], name: 'H-shape', id: 'H-0', color: 'hotpink' },
-    { shape: [[1, 0], [1, 1], [1, 0]], name: 'H-shape rotated', id: 'H-1', color: 'yellow' },
+    { shape: [[1, 0], [1, 1], [1, 0]], name: 'H-shape rotated', id: 'H-1', color: 'yellowgreen' },
 
     // Pyramid shape
     { shape: [[1, 0, 0], [1, 1, 0], [1, 1, 1]], name: 'Pyramid-shape', id: 'Pyramid-0', color: 'darkorange' },
@@ -87,7 +87,6 @@ const allShapes = [
     // Diamond shape
     { shape: [[0, 1, 0], [1, 1, 1], [0, 1, 0]], name: 'Diamond-shape', id: 'Diamond-0', color: 'fuchsia' }
 ];
-
 
 
 
