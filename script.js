@@ -46,7 +46,6 @@ const allShapes = [
     // Z-shape (rotated variations)
     { shape: [[1, 1, 0], [0, 1, 1]], name: 'Z-shape', id: 'Z-0', color: 'springgreen' },
     { shape: [[0, 1], [1, 1], [1, 0]], name: 'Z-shape rotated 90', id: 'Z-1', color: 'crimson' },
-    // Removed Z-shape rotated 180
     { shape: [[0, 1], [1, 1], [1, 0]], name: 'Z-shape rotated 270', id: 'Z-3', color: 'yellowgreen' },
 
     // S-shape (rotated variations)
@@ -74,17 +73,16 @@ const allShapes = [
     { shape: [[1, 1, 0], [1, 1, 0], [1, 1, 0]], name: 'H-shape', id: 'H-0', color: 'hotpink' },
     { shape: [[1, 0], [1, 1], [1, 0]], name: 'H-shape rotated', id: 'H-1', color: 'yellowgreen' },
 
-    // Pyramid shape
-    { shape: [[1, 0, 0], [1, 1, 0], [1, 1, 1]], name: 'Pyramid-shape', id: 'Pyramid-0', color: 'darkorange' },
-
     // Cross shape (X-shape)
     { shape: [[1, 1, 1], [1, 1, 1]], name: 'Cross-shape', id: 'Cross-0', color: 'darkviolet' },
     { shape: [[1, 0], [1, 1], [0, 1]], name: 'Cross-shape rotated', id: 'Cross-1', color: 'indianred' },
 
     // T-shaped triangle (custom T)
-    { shape: [[1, 1, 1], [0, 1, 0], [1, 0, 1]], name: 'T-Triangle', id: 'T-Triangle-0',
+    { shape: [[1, 1, 1], [0, 1, 0], [1, 0, 1]], name: 'T-Triangle', id: 'T-Triangle-0', color: 'goldenrod' },
 
-
+    // Diamond shape
+    { shape: [[0, 1, 0], [1, 1, 1], [0, 1, 0]], name: 'Diamond-shape', id: 'Diamond-0', color: 'fuchsia' }
+];
 
 
 let grid = Array(8).fill(null).map(() => Array(8).fill(0));
